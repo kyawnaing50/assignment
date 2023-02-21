@@ -1,12 +1,74 @@
 #include <iostream>
-#include <string>
+
 using namespace std;
-class Betting
+const int ch_MAX = 50;
+string RandomString(int ch)
 {
-    int main()
+    char alpha[ch_MAX] = {
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D',
+        'U',
+        'D'};
+    string result = "";
+    for (int i = 0; i < ch; i++)
+        result = result + alpha[rand() % ch_MAX] + "-";
+
+    return result;
+}
+int main()
+{
+    srand(time(NULL));
+    int ch = 50;
+    for (int i = 0; i < 10; i++)
     {
-        string str = "Hello";
-        cout << "Result is.." << str << endl;
-        return 0;
+        cout << i + 1 << " " << rand() % RandomString(ch) << "\n";
     }
+
+    return 0;
 }
